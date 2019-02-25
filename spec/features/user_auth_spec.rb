@@ -6,7 +6,7 @@ RSpec.describe 'User Authentication' do
       username = 'Rajaa'
       email = 'rajaa@email.com'
       
-      visit '/results'
+      visit '/home'
       click_on 'Sign Up'
 
       expect(current_path).to eq(new_user_path)
