@@ -1,0 +1,11 @@
+<h1>Places to visit in <%= params[:location] %></h1>
+
+<% @facade.places.each do |place| %>
+  <div class="place">
+    <div class="name"><%= place.name %></div>
+    <div class="image"><%= place.image %></div>
+    <div class="address"><%= place.address %></div>
+    <div class="rating"><%= place.rating %></div>
+    <div class="ratings-total"> <%= place.ratings_total %></div>
+  </div>
+<% end %>

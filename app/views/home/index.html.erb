@@ -1,2 +1,7 @@
  <%= link_to 'Sign Up', '/users/new' %>
  <%= link_to 'Sign In', '/login' %>
+ <%= form_tag '/results', method: :get do %>
+    <%= label_tag :location %>
+    <%= text_field_tag :location %>
+    <%= submit_tag "Submit" %>
+<% end %>
