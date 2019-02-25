@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-   get '/results', to: 'results#index'
+   get '/home', to: 'home#index'
+   resources :users, only: [:new, :create]
 end
