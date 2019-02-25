@@ -19,7 +19,8 @@ RSpec.describe 'User Authentication' do
       
       user = User.last
       expect(current_path).to eq("/users/#{user.id}")
-      expect(page).to have_content("Successfully created account for #{user.name}!")
+      expect(page).to have_content("Successfully created account for #{user.name}.")
+      expect(page).to have_content("Logged in as #{user.name}")
     end 
     
     it 'should not sign up a new user if invalid entry' do 
@@ -56,7 +57,8 @@ RSpec.describe 'User Authentication' do
       fill_in :password, with: user.password
       click_on 'Sign In!'
   
-      expect(current_path).to eq("user/#{user}")
+      expect(current_path).to eq("/users/#{user.id}")
+      expect(page).to have_content('Successfully signed in.')
       expect(page).to have_content("Logged in as #{user.name}")
   
       # click_on 'Sign Out'
