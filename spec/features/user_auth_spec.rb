@@ -66,5 +66,21 @@ RSpec.describe 'User Authentication' do
       expect(current_path).to eq('/home')
       expect(page).to have_content('You have been successfully signed out.')
     end 
+    
+      it 'should not allow user to sign in' do 
+      user = User.create!(name: 'Rajaa', email: 'rajaa@email.com', password: '123', password_confirmation: '123')
+      
+      visit '/home'
+      click_on 'Sign In'
+
+      expect(current_path).to eq('/login')
+
+      fill_in :email, with: user.email
+      fill_in :password, with: '000'
+      click_on 'Sign In!'
+      
+      expect(current_path).to eq('/login')
+      expect(page).to have_content('Incorrect email or password, please try again.')
+    end 
   end
 end
