@@ -61,10 +61,10 @@ RSpec.describe 'User Authentication' do
       expect(page).to have_content('Successfully signed in.')
       expect(page).to have_content("Logged in as #{user.name}")
   
-      # click_on 'Sign Out'
-      # 
-      # expect(current_path).to eq('/home')
-      # expect(page).to have_content('You have been successfully logged out!')
+      click_on 'Sign Out'
+      
+      expect(current_path).to eq('/home')
+      expect(page).to have_content('You have been successfully signed out.')
     end 
   end
 end

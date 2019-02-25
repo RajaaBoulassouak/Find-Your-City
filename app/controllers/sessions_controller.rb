@@ -13,4 +13,9 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+  
+  def destroy
+    session.delete(:user_id)
+    redirect_to '/home', notice: 'You have been successfully signed out.'
+  end
 end
