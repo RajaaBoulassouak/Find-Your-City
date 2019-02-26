@@ -1,4 +1,9 @@
-<h1>Places to visit in <%= params[:location] %></h1>
+<% if params[:location].empty? == false %>
+  <h1>Places to visit in <%= params[:location] %></h1> 
+  <% if current_user %>
+    <div class="save-favorite"><%= link_to "Add #{params[:location]} to your Favorites", user_favorites_path(user_id: current_user.id, location: params[:location]), method: 'post' %><div>
+  <% end %>
+<% end %>
 
 <% @facade.places.each do |place| %>
   <div class="place">
