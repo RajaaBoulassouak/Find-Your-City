@@ -24,7 +24,7 @@ RSpec.describe 'User Authentication' do
     end 
     
     it 'should not sign up a new user if invalid entry' do 
-      user_1 = User.create!(name: 'Rajaa', email: 'rajaa@email.com', password: '123', password_confirmation: '123')
+      user = User.create!(name: 'Rajaa', email: 'rajaa@email.com', password: '123', password_confirmation: '123')
       username = 'Rajaaa'
       email = 'rajaa@email.com'
       

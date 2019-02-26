@@ -6,7 +6,7 @@ RSpec.describe Location, type: :model do
   end
   
   describe 'Relationships' do
-    it { should have_many :users }
     it { should have_many :favorites }
+    it { should have_many :users }
   end
 end 
