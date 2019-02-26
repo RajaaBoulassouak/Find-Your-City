@@ -13,7 +13,7 @@ RSpec.feature 'Favorites' do
     
     click_on "Add #{location} to your Favorites"
     
-    expect(current_path).to eq('/results')
+    expect(current_path).to eq("/users/#{user.id}/favorites")
     expect(page).to have_content("#{location} has been added to your Favorites")
   end 
 end 
