@@ -7,9 +7,14 @@ class Place
   
   def initialize(data)
     @name = data[:name]
-    @image = data[:photos][0][:photo_reference]
+    @image = get_image(data[:photos][0][:photo_reference])
     @address = data[:formatted_address]
     @rating = data[:rating]
     @ratings_total = data[:user_ratings_total]
+  end
+  
+  def get_image(data)
+    service = GooglePlacesService.new(data)
+    service.get_image
   end
 end 

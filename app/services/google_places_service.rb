@@ -1,19 +1,31 @@
 class GooglePlacesService 
   
-  def initialize(location)
-    @location = location 
+  def initialize(data)
+    @data = data
   end
   
   def get_places
-    results = JSON.parse(response('maps/api/place/textsearch/json?').body, symbolize_names: true)
-    results[:results]
+    JSON.parse(places_response('maps/api/place/textsearch/json?').body, symbolize_names: true)[:results]
+  end
+  
+  def get_image
+    image = image_response('maps/api/place/photo?').body  
   end
 
   private
 
-  def response(url)
+  def places_response(url)
     @response ||= conn.get(url) do |req|
-      req.params['query'] = "#{@location}+point+of+interest"
+      req.params['query'] = "#{@data}+point+of+interest"
+      req.params['key']     = ENV['Google-Places-Key']
+    end
+  end
+  
+  def image_response(url)
+    @response ||= conn.get(url) do |req|
+      req.params['maxwidth'] = 400
+      req.params['photoreference'] = @data
+      req.params['sensor'] = false
       req.params['key']     = ENV['Google-Places-Key']
     end
   end
