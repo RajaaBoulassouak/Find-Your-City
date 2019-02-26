@@ -19,8 +19,6 @@ RSpec.feature 'Visitor can enter a city/location' do
       expect(page).to have_content("Tropical Discovery")
       expect(page).to have_content("2900 E 23rd Ave, Denver, CO 80205, USA")
       expect(page).to have_content(4.7)
-      expect(page).to have_content(4.7)
-      expect(page).to have_content("3")
     end
   end 
 end 
