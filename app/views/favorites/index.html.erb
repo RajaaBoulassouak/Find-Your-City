@@ -1,5 +1,13 @@
-<% @favorites.each do |favorite| %>
-  <div class="favorite">
-    <div class="name"><%= favorite.name %></div>
-  </div>
-<% end %>
+<div class="favorites-container">
+  <% @favorites.each do |favorite| %>
+    <ul class=favorite>
+      <div class="favorite-name">
+          <li class="name"><%= favorite.name %></li>
+        </div>
+        <div class="favorite-icons"
+          <li class="edit"><%= link_to 'Edit' %></li>
+          <li class="delete"><%= link_to 'Delete' %></li>
+        </div>
+    </ul>
+  <% end %>
+</div>

@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   before_action :authorize
   
   def index
-    @favorites = current_user.locations
+    @favorites = current_user.locations.order(:name)
   end
   
   def create
