@@ -1,23 +1,22 @@
 class GooglePlacesService 
   
-  def initialize(location)
-    @location = location 
+  def initialize(data)
+    @data = data
   end
   
   def get_places
-    results = JSON.parse(response('maps/api/place/textsearch/json?').body, symbolize_names: true)
-    results[:results]
+    JSON.parse(places_response('maps/api/place/textsearch/json?').body, symbolize_names: true)[:results]
   end
 
   private
 
-  def response(url)
+  def places_response(url)
     @response ||= conn.get(url) do |req|
-      req.params['query'] = "#{@location}+point+of+interest"
+      req.params['query'] = "#{@data}+point+of+interest"
       req.params['key']     = ENV['Google-Places-Key']
     end
   end
-
+  
   def conn
     Faraday.new(:url => 'https://maps.googleapis.com') do |faraday|
       faraday.adapter Faraday.default_adapter
