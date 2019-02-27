@@ -1,10 +1,7 @@
 <%= form_tag '/login' do %>
-
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
-
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-
-  <%= submit_tag 'Sign In!' %>
+<ul class="form">
+<li><%= text_field_tag :email, nil, placeholder: 'Email', class: 'field' %></li>
+<li><%= password_field_tag :password, nil, placeholder: 'Password', class: 'field' %></li>
+<li><%= submit_tag 'Sign In', class: 'submit'%></li>
+</ul>
 <% end %>
