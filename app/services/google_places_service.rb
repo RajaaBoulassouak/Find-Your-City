@@ -7,10 +7,6 @@ class GooglePlacesService
   def get_places
     JSON.parse(places_response('maps/api/place/textsearch/json?').body, symbolize_names: true)[:results]
   end
-  
-  def get_image
-    image = image_response('maps/api/place/photo?').body  
-  end
 
   private
 
@@ -21,15 +17,6 @@ class GooglePlacesService
     end
   end
   
-  def image_response(url)
-    @response ||= conn.get(url) do |req|
-      req.params['maxwidth'] = 400
-      req.params['photoreference'] = @data
-      req.params['sensor'] = false
-      req.params['key']     = ENV['Google-Places-Key']
-    end
-  end
-
   def conn
     Faraday.new(:url => 'https://maps.googleapis.com') do |faraday|
       faraday.adapter Faraday.default_adapter

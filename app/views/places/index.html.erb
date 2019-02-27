@@ -2,10 +2,9 @@
 
 <% @facade.places.each do |place| %>
   <div class="place">
+    <div class="map"> <%= image_tag @facade.get_place_map(address: place.address) %></div>
     <div class="name"><%= place.name %></div>
     <div class="address"><%= place.address %></div>
     <div class="rating"><%= place.rating %></div>
     <div class="ratings-total"> <%= place.ratings_total %></div>
-    <div class="image"><%= image_tag(place.image) %></div>
-  </div>
 <% end %>

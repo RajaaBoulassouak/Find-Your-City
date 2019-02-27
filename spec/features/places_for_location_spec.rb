@@ -11,8 +11,8 @@ RSpec.feature 'Visitor can enter a city/location' do
     
     expect(page).to have_css('.place')
     within(first('.place')) do 
+      expect(page).to have_css('.map')
       expect(page).to have_css('.name')
-      expect(page).to have_css('.image')
       expect(page).to have_css('.address')
       expect(page).to have_css('.rating')
       expect(page).to have_css('.ratings-total')

@@ -11,6 +11,10 @@ class LocationResults
     end
   end
   
+  def get_place_map(address)
+    "https://maps.googleapis.com/maps/api/staticmap?center=#{address}&size=200x200&zoom=17&key=#{ENV['Google-Places-Key']}"
+  end
+  
   private 
   
   def google_places_service
