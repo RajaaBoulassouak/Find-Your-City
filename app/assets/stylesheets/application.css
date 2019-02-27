@@ -28,6 +28,7 @@ body {
 
 .link {
   color: #ff8000;
+  text-decoration :none; 
 }
 
 .signed-in-as {
@@ -174,6 +175,10 @@ h1 {
   font-size: 2em;
   margin-bottom: 1em;
   color: #333333;
+}
+
+.search-link {
+  text-decoration :none; 
 }
 
 .place-ratings {
