@@ -15,12 +15,11 @@ RSpec.describe 'User Authentication' do
       fill_in :user_email, with: email
       fill_in :user_password, with: '123'
       fill_in :user_password_confirmation, with: '123'
-      click_on 'Create User'
+      click_on 'Sign Up!'
       
       user = User.last
       expect(current_path).to eq("/users/#{user.id}/favorites")
       expect(page).to have_content("Successfully created account for #{user.name}.")
-      expect(page).to have_content("Logged in as #{user.name}")
     end 
     
     it 'should not sign up a new user if invalid entry' do 
@@ -37,7 +36,7 @@ RSpec.describe 'User Authentication' do
       fill_in :user_email, with: email
       fill_in :user_password, with: '123'
       fill_in :user_password_confirmation, with: '123'
-      click_on 'Create User'
+      click_on 'Sign Up!'
       
       expect(current_path).to eq('/users')
       expect(page).to have_content('Oops, could not create account. Please use a valid email and password and try again.')
@@ -59,7 +58,6 @@ RSpec.describe 'User Authentication' do
   
       expect(current_path).to eq("/users/#{user.id}/favorites")
       expect(page).to have_content('Successfully signed in.')
-      expect(page).to have_content("Logged in as #{user.name}")
   
       click_on 'Sign Out'
       

@@ -5,7 +5,7 @@ RSpec.feature 'Visitor can enter a city/location' do
     location = 'Denver,Co'
     visit '/home'
     fill_in :location, with: location
-    click_on 'Submit'
+    click_on 'Search'
   
     expect(current_path).to eq('/results')
     
