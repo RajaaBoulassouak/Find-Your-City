@@ -1,6 +1,7 @@
 body {
   font-family: 'Oswald', sans-serif;
   text-align: center;
+  color: #333333;
 }
 
 .nav-bar {
@@ -26,7 +27,7 @@ body {
 }
 
 .link {
-  color: #bfbfbf;
+  color: #ff8000;
 }
 
 .signed-in-as {
@@ -47,6 +48,12 @@ body {
   margin-right: 40px;
 }
 
+.favorites-link {
+  font-size: 1.2em;
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
 .input-field {
   height: 30px;
   width: 200px;
@@ -63,6 +70,7 @@ body {
 .search {
   margin-top: 2em;
   margin-left: 1em;
+  background-color: #ff8000;
 }
 
 .form {
@@ -81,9 +89,11 @@ body {
 }
 
 .submit {
-  height: 100px;
+  height: 30px;
   width: 100px;
   margin-top: 1em;
+  border-radius: 5px;
+  background-color: #ff8000;
 }
 
 .favorites-container {
@@ -93,8 +103,6 @@ body {
 }
 
 .favorite {
-  /* list-style-type: none; */
-  /* display: flex; */
   height: 50px;
   border-radius: 5px;
   box-shadow: 3px 3px 3px -1px rgba(51,51,51,0.76);
@@ -113,6 +121,7 @@ body {
   display: flex;
   margin-right: 2em;
   margin-top: 1em;
+  color: #ff8000;
 }
 
 .edit, 
@@ -120,6 +129,82 @@ body {
   font-size: 1em;
   margin-left: 0.5em;
 }
+
+h1 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.fave-link {
+  font-size: 1.5em;
+  color: #ff8000;
+  border-radius: 3px;
+}
+
+.places-container {
+  margin-top: 5em;
+}
+
+.place {
+  list-style-type: none;
+  height: 250px;
+  border-radius: 5px;
+  width: 50%;
+  margin-left: 25%;
+  box-shadow: 3px 3px 15px -2px rgba(51,51,51,0.86);
+  margin-bottom: 2em;
+  margin-top: 2em;
+  padding: 5px;
+}
+
+.place-map {
+  list-style-type: none;
+  float: left;
+  margin-top: 1.5em;
+  margin-left: 1em;
+  margin-right: 0.5em;
+  box-shadow: 2px 2px 10px 0px rgba(51,51,51,0.86);
+}
+
+.place-info {
+  margin-top: 1em;
+}
+
+.place-name {
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: #333333;
+}
+
+.place-ratings {
+  display: flex;
+  margin-left: 5em;
+  margin-bottom: 3em;
+}
+
+.rating {
+  font-size: 2em;
+  margin-right: 3em;
+  margin-left: 5em;
+} 
+
+.ratings-total {
+  font-size: 1.5em;
+  margin-right: 3em;
+  margin-left: 2em;
+  margin-top: 0.2em;
+}
+
+
+.place-address {
+  font-size: 1.3em;
+}
+
+
+
+
+
+
 
 
 

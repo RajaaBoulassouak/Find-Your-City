@@ -12,15 +12,17 @@
     <nav class="nav-bar">
           <%= form_tag '/results', method: :get do %>
           <ul class="input">
+            <% if current_user %>
+              <li class="favorites-link"><%= link_to 'Favorites', user_favorites_path(user_id: current_user.id), class: "link" %></li>
+            <% end %>
             <li><%= text_field_tag :location, nil, :placeholder => 'Location', class: 'input-field' %></li>
-            <li><%= submit_tag "Submit", class: 'search' %></li>
+            <li><%= submit_tag "Search", class: 'search' %></li>
           </ul>
           <% end %>
         <ul class="authentication">
           <li class="app-title">I-Travel</li>
           <% if current_user %>
           <li class="sign"><%= link_to 'Sign Out', '/logout', class: "link" %></li>
-          <li class="signed-in-as">Logged in as <%= current_user.name %></li>
           <% else %>
             <li class="sign"><%= link_to 'Sign Up', '/users/new', class: "link"%><li>
             <li class="sign"><%= link_to 'Sign In', '/login', class: "link" %></li>
