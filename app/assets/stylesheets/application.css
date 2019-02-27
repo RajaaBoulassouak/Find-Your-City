@@ -1,15 +1,95 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+}
+
+.nav-bar {
+  height: 80px;
+  background: #333333;
+  margin: 0.1em 0.1em 1em 0.1em;
+  box-shadow: 1px 1px 1px 1px rgba(20,20,20,0.86);
+}
+
+.authentication {
+  float: left;
+  list-style-type: none;
+  display: flex;
+  margin-top: 1.5em;
+  color: #bfbfbf;
+}
+
+.sign {
+  font-size: 1.2em;
+  margin-top: 0.5em;
+  margin-right: 1em;
+  color: #bfbfbf;
+}
+
+.link {
+  color: #bfbfbf;
+}
+
+.signed-in-as {
+  font-size: 1em;
+  margin-top: 0.9em
+}
+
+.app-title {
+  font-size: 2em;
+  margin-right: 1em;
+  color: #f2f2f2;
+}
+
+.input {
+  float: right;
+  list-style-type: none;
+  display: flex;
+  margin-right: 40px;
+}
+
+.input-field {
+  height: 30px;
+  width: 200px;
+  border-radius: 1px;
+  margin-top: 0.5em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.input-field::placeholder {
+  margin-top: 1em;
+}
+
+.search {
+  margin-top: 2em;
+  margin-left: 1em;
+}
+
+.form {
+  list-style-type: none;
+  margin-top: 9em;
+  margin-right: 2em;
+}
+
+.field {
+  height: 50px;
+  width: 300px;
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+  text-align: left;
+  font-size: 1.2em;
+}
+
+.submit {
+  height: 100px;
+  width: 100px;
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
