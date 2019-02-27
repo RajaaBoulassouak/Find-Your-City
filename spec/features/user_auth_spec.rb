@@ -18,7 +18,7 @@ RSpec.describe 'User Authentication' do
       click_on 'Sign Up!'
       
       user = User.last
-      expect(current_path).to eq("/users/#{user.id}/favorites")
+      expect(current_path).to eq('/')
     end 
     
     it 'should not sign up a new user if invalid entry' do 
@@ -54,7 +54,7 @@ RSpec.describe 'User Authentication' do
       fill_in :password, with: user.password
       click_on 'Sign In!'
   
-      expect(current_path).to eq("/users/#{user.id}/favorites")
+      expect(current_path).to eq('/')
   
       click_on 'Sign Out'
       
