@@ -6,7 +6,7 @@ RSpec.describe 'User Authentication' do
       username = 'Rajaa'
       email = 'rajaa@email.com'
       
-      visit '/home'
+      visit '/'
       click_on 'Sign Up'
 
       expect(current_path).to eq('/users/new')
@@ -19,7 +19,6 @@ RSpec.describe 'User Authentication' do
       
       user = User.last
       expect(current_path).to eq("/users/#{user.id}/favorites")
-      expect(page).to have_content("Successfully created account for #{user.name}.")
     end 
     
     it 'should not sign up a new user if invalid entry' do 
@@ -27,7 +26,7 @@ RSpec.describe 'User Authentication' do
       username = 'Rajaaa'
       email = 'rajaa@email.com'
       
-      visit '/home'
+      visit '/'
       click_on 'Sign Up'
 
       expect(current_path).to eq('/users/new')
@@ -39,7 +38,6 @@ RSpec.describe 'User Authentication' do
       click_on 'Sign Up!'
       
       expect(current_path).to eq('/users')
-      expect(page).to have_content('Oops, could not create account. Please use a valid email and password and try again.')
     end 
   end 
   
@@ -47,7 +45,7 @@ RSpec.describe 'User Authentication' do
     it 'should allow user to sign in and out' do 
       user = User.create!(name: 'Rajaa', email: 'rajaa@email.com', password: '123', password_confirmation: '123')
   
-      visit '/home'
+      visit '/'
       click_on 'Sign In'
   
       expect(current_path).to eq('/login')
@@ -57,18 +55,16 @@ RSpec.describe 'User Authentication' do
       click_on 'Sign In!'
   
       expect(current_path).to eq("/users/#{user.id}/favorites")
-      expect(page).to have_content('Successfully signed in.')
   
       click_on 'Sign Out'
       
-      expect(current_path).to eq('/home')
-      expect(page).to have_content('You have been successfully signed out.')
+      expect(current_path).to eq('/')
     end 
     
       it 'should not allow user to sign in' do 
       user = User.create!(name: 'Rajaa', email: 'rajaa@email.com', password: '123', password_confirmation: '123')
       
-      visit '/home'
+      visit '/'
       click_on 'Sign In'
 
       expect(current_path).to eq('/login')
@@ -78,7 +74,6 @@ RSpec.describe 'User Authentication' do
       click_on 'Sign In!'
       
       expect(current_path).to eq('/login')
-      expect(page).to have_content('Incorrect email or password, please try again.')
     end 
   end
 end

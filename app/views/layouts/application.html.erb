@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FindYourCity</title>
+    <title>I-Travel</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -29,16 +29,6 @@
           <% end %>
         </ul>
     </nav>
-    <div class='message'>
-      <% if notice %>
-        <%= notice %>
-	    <% end %>
-    </div>
-    <div class='alert'>
-	    <% if alert %>
-        <%= alert %>
-	    <% end %>
-    </div>
     <%= yield %>
   </body>
 </html>

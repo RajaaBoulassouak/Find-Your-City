@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Visitor can enter a city/location' do 
   scenario 'and receives recommended places to visit' do 
     location = 'Denver,Co'
-    visit '/home'
+    visit '/'
     fill_in :location, with: location
     click_on 'Search'
   

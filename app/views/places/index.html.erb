@@ -2,7 +2,11 @@
   <h1>Places to visit in <%= params[:location] %></h1> 
   <% if current_user %>
     <div class="save-favorite"><%= link_to "Add #{params[:location]} to your Favorites", user_favorites_path(user_id: current_user.id, location: params[:location]), method: 'post', class: "fave-link" %><div>
+  <% else %>
+    <div class="save-favorite">You can save <%= params[:location] %> and other Locations. <%= link_to 'Sign Up!', '/users/new', class: "link" %>
   <% end %>
+<% else %>
+  <h2> Please enter a Location. </h2>
 <% end %>
 
 <div class="places-container">

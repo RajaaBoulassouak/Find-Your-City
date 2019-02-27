@@ -4,11 +4,46 @@ body {
   color: #333333;
 }
 
+.home-text {
+  background-image: url(travel.png);
+  background-repeat: no-repeat;
+  width: 1200px;
+  height: 600px;
+  margin-left: 100px;
+  list-style-type: none;
+  text-align: left;
+}
+
+.welocme {
+  font-size: 3em;
+  margin-bottom: 1.5em;
+}
+
+.intro-1 {
+  font-size: 2em;
+  margin-bottom: 1.5em;
+}
+
+.intro-2 {
+  font-size: 1.5em;
+}
+
+.home-sign{
+  margin-top: 1.5em;
+  height: 30px;
+  width: 120px;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.home-link {
+  color: #e67300;
+  text-decoration :none; 
+}
+
 .nav-bar {
   height: 80px;
   background: #333333;
-  margin: 0.1em 0.1em 1em 0.1em;
-  box-shadow: 1px 1px 1px 1px rgba(20,20,20,0.86);
 }
 
 .authentication {
@@ -29,11 +64,6 @@ body {
 .link {
   color: #ff8000;
   text-decoration :none; 
-}
-
-.signed-in-as {
-  font-size: 1em;
-  margin-top: 0.9em
 }
 
 .app-title {
@@ -113,6 +143,9 @@ body {
   list-style-type: none;
   float: left;
   font-size: 2em;
+}
+
+.search-link {
   color: #333333;
 }
 
@@ -134,6 +167,10 @@ body {
 h1 {
   margin-top: 2em;
   margin-bottom: 1em;
+}
+
+h2 {
+  margin-top: 5em;
 }
 
 .fave-link {

@@ -1,0 +1,25 @@
+<% if current_user %>
+  <ul class="home-text">
+    <li class="welocme"> Welcome to I-Travel, <%= current_user.name %> </li>
+    <li class="intro-1">
+      Are you feeling wanderlust? Search for any location, a city or a country and find information about its must see places including ratings of people who visited.
+    </li>
+  </ul>  
+<% else %>
+  <ul class="home-text">
+    <li class="welocme"> Welcome to I-Travel </li>
+    <li class="intro-1">
+      Are you feeling wanderlust? Search for any location, a city or a country and find information about its must see places including ratings of people who visited.
+    </li>
+    <li class="intro-2">
+      Sign up below to use members-only features such as saving your favorite locations.
+    </li>
+    <li class="home-sign"><%= link_to 'Sign Up!', '/users/new', class: "home-link"%><li>
+  </ul>
+<% end %>
+
+
+
+  
+
+
