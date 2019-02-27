@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   get '/results', to: 'places#index'
-  resources :users, only: [:new, :create, :show] do 
+  resources :users, only: [:new, :create] do 
     resources :favorites, only: [:index, :create]
   end
 end

@@ -5,35 +5,40 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application.css', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
-    <nav class="navbar">
-      <div class="app-title">I-Travel</div>
-      <div class="nav-elements">
-        <% if current_user %>
-          <div class="sign-out"><%= link_to 'Sign Out', '/logout' %></div>
-          <div class="signed-in-as">Logged in as <%= current_user.name %></div>
-        <% else %>
-          <div class="sign-up"><%= link_to 'Sign Up', '/users/new' %><div>
-          <div class="sign-in"><%= link_to 'Sign In', '/login' %></div>
-        <% end %>
-        <div class="input">
+    <nav class="nav-bar">
           <%= form_tag '/results', method: :get do %>
-            <div class="input-label"><%= label_tag :location %></div>
-            <div class="input-field"><%= text_field_tag :location %></div>
-            <div class="input-submit"><%= submit_tag "Submit" %></div>
+          <ul class="input">
+            <% if current_user %>
+              <li class="favorites-link"><%= link_to 'Favorites', user_favorites_path(user_id: current_user.id), class: "link" %></li>
+            <% end %>
+            <li><%= text_field_tag :location, nil, :placeholder => 'Location', class: 'input-field' %></li>
+            <li><%= submit_tag "Search", class: 'search' %></li>
+          </ul>
           <% end %>
-        </div>
-      </div>
+        <ul class="authentication">
+          <li class="app-title">I-Travel</li>
+          <% if current_user %>
+          <li class="sign"><%= link_to 'Sign Out', '/logout', class: "link" %></li>
+          <% else %>
+            <li class="sign"><%= link_to 'Sign Up', '/users/new', class: "link"%><li>
+            <li class="sign"><%= link_to 'Sign In', '/login', class: "link" %></li>
+          <% end %>
+        </ul>
     </nav>
-    <% if notice %>
-      <%= notice %>
-	  <% end %>
-	  <% if alert %>
-      <%= alert %>
-	  <% end %>
+    <div class='message'>
+      <% if notice %>
+        <%= notice %>
+	    <% end %>
+    </div>
+    <div class='alert'>
+	    <% if alert %>
+        <%= alert %>
+	    <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

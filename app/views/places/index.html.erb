@@ -1,15 +1,32 @@
 <% if params[:location].empty? == false %>
   <h1>Places to visit in <%= params[:location] %></h1> 
   <% if current_user %>
-    <div class="save-favorite"><%= link_to "Add #{params[:location]} to your Favorites", user_favorites_path(user_id: current_user.id, location: params[:location]), method: 'post' %><div>
+    <div class="save-favorite"><%= link_to "Add #{params[:location]} to your Favorites", user_favorites_path(user_id: current_user.id, location: params[:location]), method: 'post', class: "fave-link" %><div>
   <% end %>
 <% end %>
 
-<% @facade.places.each do |place| %>
-  <div class="place">
-    <div class="map"> <%= image_tag @facade.get_place_map(address: place.address) %></div>
-    <div class="name"><%= place.name %></div>
-    <div class="address"><%= place.address %></div>
-    <div class="rating"><%= place.rating %></div>
-    <div class="ratings-total"> <%= place.ratings_total %></div>
-<% end %>
+<div class="places-container">
+  <% @facade.places.each do |place| %>
+    <ul class="place">
+      <div class="place-map"> 
+        <li class="map"><%= image_tag @facade.get_place_map(address: place.address) %></li>
+      </div>
+      <div class="place-info">
+        <div class="place-name">
+          <li class="name"><%= place.name %></li>
+        </div>
+        <div class="place-ratings">
+          <li class="rating"><%= place.rating %></li>
+          <li class="ratings-total"> <%= place.ratings_total %></li>
+        </div>
+        <div class="place-address">
+          <li class="address"><%= place.address %></li>
+        </div>
+      </div>
+    </ul>
+  <% end %>
+</div>
+
+
+
+  
