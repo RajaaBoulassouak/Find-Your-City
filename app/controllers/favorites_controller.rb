@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   before_action :authorize
   
   def index
-    @favorites = current_user.locations.order(:name)
+    @favorites = current_user.favorites
   end
   
   def create
@@ -12,4 +12,9 @@ class FavoritesController < ApplicationController
       redirect_to "/users/#{current_user.id}/favorites"
     end
 	end
+  
+  def destroy
+    current_user.favorites.find_by(id: params[:id]).destroy
+    redirect_to "/users/#{current_user.id}/favorites"
+  end 
 end

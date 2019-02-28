@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get '/results', to: 'places#index'
   resources :users, only: [:new, :create] do 
-    resources :favorites, only: [:index, :create]
+    resources :favorites, only: [:index, :create, :destroy]
   end
 end

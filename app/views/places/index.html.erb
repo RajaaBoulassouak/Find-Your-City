@@ -21,7 +21,9 @@
         </div>
         <div class="place-ratings">
           <li class="rating"><%= place.rating %></li>
-          <li class="ratings-total"> <%= place.ratings_total %></li>
+          <li class="star-rating"><%= render_stars(place.rating) %><li>
+          <li class="ratings-total"><%= place.ratings_total %></li>
+          <li class="reviews">Reviews</li>
         </div>
         <div class="place-address">
           <li class="address"><%= place.address %></li>
@@ -30,7 +32,3 @@
     </ul>
   <% end %>
 </div>
-
-
-
-  
