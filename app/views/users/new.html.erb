@@ -1,9 +1,11 @@
-<%= form_for @user do |f| %>
-  <ul class="form">
-    <li> <%= f.text_field :name, placeholder: 'Name', class: 'field'%></li>
-    <li> <%= f.text_field :email, placeholder: 'Email', class: 'field'%></li>
-    <li> <%= f.password_field :password, placeholder: 'Password', class: 'field'%></li>
-    <li> <%= f.password_field :password_confirmation, placeholder: 'Confirm Password', class: 'field' %></li>
-    <li> <%= f.submit 'Sign Up!', class: 'submit' %></li>
-  </ul>
-<% end %>
+<div class="sign-up-container">
+  <%= form_for @user do |f| %>
+    <ul class="form">
+      <li> <%= f.text_field :name, placeholder: 'Name', class: 'name-field'%></li>
+      <li> <%= f.text_field :email, placeholder: 'Email', class: 'field'%></li>
+      <li> <%= f.password_field :password, placeholder: 'Password', class: 'field'%></li>
+      <li> <%= f.password_field :password_confirmation, placeholder: 'Confirm Password', class: 'field' %></li>
+      <li> <%= f.submit 'Sign Up!', class: 'submit' %></li>
+    </ul>
+  <% end %>
+</div>
