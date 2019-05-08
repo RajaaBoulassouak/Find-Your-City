@@ -5,29 +5,29 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application.css', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
     <nav class="nav-bar">
-          <%= form_tag '/results', method: :get do %>
-          <ul class="input">
-            <% if current_user %>
-              <li class="favorites-link"><%= link_to 'Favorites', user_favorites_path(user_id: current_user.id), class: "link" %></li>
-            <% end %>
-            <li><%= text_field_tag :location, nil, :placeholder => 'Location', class: 'input-field' %></li>
-            <li><%= submit_tag "Search", class: 'search' %></li>
-          </ul>
-          <% end %>
-        <ul class="authentication">
-          <li class="app-title">I-Travel</li>
-          <% if current_user %>
-          <li class="sign"><%= link_to 'Sign Out', '/logout', class: "link" %></li>
-          <% else %>
-            <li class="sign"><%= link_to 'Sign Up', '/users/new', class: "link"%><li>
-            <li class="sign"><%= link_to 'Sign In', '/login', class: "link" %></li>
-          <% end %>
-        </ul>
+      <%= form_tag '/results', method: :get do %>
+      <ul class="input">
+        <% if current_user %>
+          <li class="favorites-link"><%= link_to 'Favorites', user_favorites_path(user_id: current_user.id), class: "link" %></li>
+        <% end %>
+        <li><%= text_field_tag :location, nil, :placeholder => 'Location', class: 'input-field' %></li>
+        <li><%= submit_tag "Search", class: 'search' %></li>
+      </ul>
+      <% end %>
+      <ul class="authentication">
+        <li class="app-title">I-Travel</li>
+        <% if current_user %>
+        <li class="sign"><%= link_to 'Sign Out', '/logout', class: "link" %></li>
+        <% else %>
+          <li class="sign"><%= link_to 'Sign Up', '/users/new', class: "link"%><li>
+          <li class="sign"><%= link_to 'Sign In', '/login', class: "link" %></li>
+        <% end %>
+      </ul>
     </nav>
     <%= yield %>
   </body>
